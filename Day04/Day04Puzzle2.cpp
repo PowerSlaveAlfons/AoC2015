@@ -4,7 +4,7 @@
 #include <vector>
 #include "dpp/digestpp.hpp"
 
-int main (int argc, char* argv[])
+int main(int argc, char *argv[])
 {
     std::string basicString = "ckczppom";
     std::vector<std::string> results;
@@ -13,7 +13,7 @@ int main (int argc, char* argv[])
         std::string newString = basicString + std::to_string(i);
         std::string newHash = digestpp::md5().absorb(newString).hexdigest();
         //std::cout << newString << ": " << newHash << std::endl;
-        if (newHash.compare(0,6,"000000") == 0)
+        if (newHash.compare(0, 6, "000000") == 0)
         {
             results.push_back(newString);
             break;
@@ -25,5 +25,5 @@ int main (int argc, char* argv[])
     for (auto a : results)
         std::cout << a << std::endl;
 
-    return 0; 
+    return 0;
 }
